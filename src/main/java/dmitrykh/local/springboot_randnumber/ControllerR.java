@@ -1,7 +1,5 @@
 package dmitrykh.local.springboot_randnumber;
 
-import java.util.Random;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class ControllerR {
     @GetMapping("/getRandomNum")
-    public int getRandomNum() {
-        return new Random().nextInt(1000);
+    public RandNum getRandomNum() {
+        RandNum randNum = new RandNum();
+        return randNum;
     }
 }

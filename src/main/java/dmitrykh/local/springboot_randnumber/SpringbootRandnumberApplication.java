@@ -9,5 +9,4 @@ public class SpringbootRandnumberApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringbootRandnumberApplication.class, args);
     }
-
 }
