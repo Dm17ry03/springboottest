@@ -1,0 +1,6 @@
+openapi: "3.0.0"
+paths:
+  /getRandomNum:
+    get:
+      summary: gets random number
+      operationId: getRandommNum
