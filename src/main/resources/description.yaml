@@ -1,0 +1,18 @@
+openapi: 3.0.1
+info:
+  title: Random Number API
+  description: API for generating and managing random numbers.
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /getRandomNum:
+    get:
+      summary: Get a random number
+      responses:
+        '200':
+          description: A random number
+          content:
+            application/json:
+              schema:
+                type: object
