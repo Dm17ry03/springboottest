@@ -50,12 +50,42 @@ paths:
                   error:
                     type: string
                     example: Internal Server Error
+  /getRandomLimit:
+    get:
+      summary: Get the random limit
+      description: Retrieves the current random limit.
+      operationId: getRandomLimit
+      responses:
+        '200':
+          description: The current random limit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RandLimit'
 
 components:
   schemas:
     RandNum:
       type: object
       properties:
-        number:
+        num:
           type: integer
           description: The generated random number
+          example: 123
+    RandLimit:
+      type: object
+      properties:
+        randLimit:
+          type: integer
+          description: The limit for the random number generator
+          example: 1000
+
+    RandNumGenerator:
+      type: object
+      properties:
+        rand:
+          type: object
+          description: An instance of the Random class used to generate random numbers.
+        randLimit:
+          $ref: '#/components/schemas/RandLimit'
+          description: The limit for the random number generator.

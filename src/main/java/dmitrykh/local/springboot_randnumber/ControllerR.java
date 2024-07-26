@@ -1,6 +1,9 @@
 package dmitrykh.local.springboot_randnumber;
 
 import org.springframework.web.bind.annotation.*;
+import dmitrykh.local.springboot_randnumber.model.RandNum;
+import dmitrykh.local.springboot_randnumber.model.RandLimit;
+import dmitrykh.local.springboot_randnumber.model.RandNumGenerator;
 
 @RestController
 @RequestMapping("/api")
@@ -9,7 +12,8 @@ public class ControllerR {
     @GetMapping("/getRandomNum")
     public RandNum getRandomNum() {
         RandLimit randLimit = new RandLimit();
-        RandNum randNum = new RandNum(randLimit);
+        RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
+        RandNum randNum = new RandNum(randNumGenerator.genNum());
         return randNum;
     }
 
@@ -19,17 +23,10 @@ public class ControllerR {
         RandLimit randLimit = new RandLimit();
         return randLimit;
     }
-
-    @GetMapping("/getMyRandNum")
-    public RandNum getMyRandNum(int setNewRandomLimit) {
-        RandLimit randLimit = new RandLimit();
-        randLimit.setRandLimit(setNewRandomLimit);
-        RandNum randNum = new RandNum(randLimit);
-        return randNum;
-    }
     @PostMapping("/changeMyRandNum")
     public RandNum changeMyRandNum (@RequestBody RandLimit randLimit) {
-        RandNum randNum = new RandNum(randLimit);
+        RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
+        RandNum randNum = new RandNum(randNumGenerator.genNum());
         return randNum;
     }
 
@@ -37,5 +34,4 @@ public class ControllerR {
     public String hello() {
         return "Hello World";
     }
-
 }
