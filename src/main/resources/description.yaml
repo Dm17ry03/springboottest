@@ -77,15 +77,6 @@ components:
       properties:
         randLimit:
           type: integer
+          default: 1000
           description: The limit for the random number generator
           example: 1000
-
-    RandNumGenerator:
-      type: object
-      properties:
-        rand:
-          type: object
-          description: An instance of the Random class used to generate random numbers.
-        randLimit:
-          $ref: '#/components/schemas/RandLimit'
-          description: The limit for the random number generator.

@@ -1,9 +1,9 @@
 package dmitrykh.local.springboot_randnumber;
 
-public class RandNum {
+public class RandNumOwn {
     int num;
 
-    public RandNum(int numarg) {
+    public RandNumOwn(int numarg) {
         num = numarg;
     }
     public int getNum() {

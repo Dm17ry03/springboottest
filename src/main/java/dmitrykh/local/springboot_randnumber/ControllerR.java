@@ -3,7 +3,6 @@ package dmitrykh.local.springboot_randnumber;
 import org.springframework.web.bind.annotation.*;
 import dmitrykh.local.springboot_randnumber.model.RandNum;
 import dmitrykh.local.springboot_randnumber.model.RandLimit;
-import dmitrykh.local.springboot_randnumber.model.RandNumGenerator;
 
 @RestController
 @RequestMapping("/api")
@@ -13,7 +12,7 @@ public class ControllerR {
     public RandNum getRandomNum() {
         RandLimit randLimit = new RandLimit();
         RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
-        RandNum randNum = new RandNum(randNumGenerator.genNum());
+        RandNum randNum = new RandNum().num(randNumGenerator.genNum());
         return randNum;
     }
 
@@ -26,7 +25,7 @@ public class ControllerR {
     @PostMapping("/changeMyRandNum")
     public RandNum changeMyRandNum (@RequestBody RandLimit randLimit) {
         RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
-        RandNum randNum = new RandNum(randNumGenerator.genNum());
+        RandNum randNum = new RandNum().num(randNumGenerator.genNum());
         return randNum;
     }
 

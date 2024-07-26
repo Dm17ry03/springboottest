@@ -1,5 +1,7 @@
 package dmitrykh.local.springboot_randnumber;
+
 import java.util.Random;
+import dmitrykh.local.springboot_randnumber.model.RandLimit;
 
 public class RandNumGenerator {
     Random rand;

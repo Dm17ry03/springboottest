@@ -1,6 +1,6 @@
 package dmitrykh.local.springboot_randnumber;
 
-public class RandLimit {
+public class RandLimitOwn {
     int randLimit = 1000;
 
     public int getRandLimit() {
