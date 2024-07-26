@@ -33,4 +33,9 @@ public class ControllerR {
         return randNum;
     }
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World";
+    }
+
 }

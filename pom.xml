@@ -80,14 +80,14 @@
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <generatorName>kotlin-spring</generatorName>
+                            <generatorName>spring</generatorName>
                             <library>spring-boot</library>
 
-                            <inputSpec>${project.basedir}/src/main/resources/openapi/distribution-service-v1/openapi.yaml</inputSpec>
-                            <output>${project.build.directory}/generated-sources/openapi/distribution-service-v1</output>
+                            <inputSpec>${project.basedir}/src/main/resources/description.yaml</inputSpec>
+                            <output>${project.build.directory}/generated-sources/openapi</output>
 
-                            <apiPackage>no.tradesolution.bridge.distribution.service.server.api</apiPackage>
-                            <modelPackage>no.tradesolution.bridge.distribution.service.server.model</modelPackage>
+                            <apiPackage>dmitrykh.local.springboot_randnumber.api</apiPackage>
+                            <modelPackage>dmitrykh.local.springboot_randnumber.model</modelPackage>
 
                             <generateApiDocumentation>true</generateApiDocumentation>
                             <generateApiTests>false</generateApiTests>
@@ -114,7 +114,7 @@
                                 <serializationLibrary>jackson</serializationLibrary>
                                 <serializableModel>false</serializableModel>
                                 <skipDefaultInterface>true</skipDefaultInterface>
-                                <sourceFolder>src/main/kotlin</sourceFolder>
+                                <sourceFolder>src/main/java/dmitrykh.local.springboot_randnumber</sourceFolder>
                                 <useBeanValidation>false</useBeanValidation>
                                 <useJakartaEe>true</useJakartaEe>
                                 <useSpringBoot3>true</useSpringBoot3>
