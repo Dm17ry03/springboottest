@@ -1,4 +1,4 @@
-package dmitrykh.local.springboot_randnumber;
+package dmitrykh.local.springboot_randnumber.service;
 
 import java.util.Random;
 import dmitrykh.local.springboot_randnumber.model.RandLimit;
