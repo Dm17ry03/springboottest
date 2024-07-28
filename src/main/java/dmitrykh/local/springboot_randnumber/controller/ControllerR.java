@@ -8,25 +8,25 @@ import dmitrykh.local.springboot_randnumber.model.RandLimit;
 @RestController
 @RequestMapping("/api")
 public class ControllerR {
+    RandLimit randLimit = new RandLimit();
+
     @GetMapping("/getRandomNum")
     public RandNum getRandomNum() {
-        RandLimit randLimit = new RandLimit();
-        RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
-        RandNum randNum = new RandNum().num(randNumGenerator.genNum());
+        RandNumGenerator randNumGenerator = new RandNumGenerator();
+        RandNum randNum = new RandNum().num(randNumGenerator.genNum(randLimit.getRandLimit()));
         return randNum;
     }
 
     @GetMapping("/getRandomLimit")
     public RandLimit getRandomLimit() {
-        // the num is 1000, will be changed later
-        RandLimit randLimit = new RandLimit();
+        // the num is 1000, can be changed later
         return randLimit;
     }
 
     @PostMapping("/changeMyRandNum")
-    public RandNum changeMyRandNum (@RequestBody RandLimit randLimit) {
-        RandNumGenerator randNumGenerator = new RandNumGenerator(randLimit);
-        RandNum randNum = new RandNum().num(randNumGenerator.genNum());
+    public RandNum changeMyRandNum (@RequestBody RandLimit randLimitarg) {
+        RandNumGenerator randNumGenerator = new RandNumGenerator();
+        RandNum randNum = new RandNum().num(randNumGenerator.genNum(randLimitarg.getRandLimit()));
         return randNum;
     }
 
