@@ -114,7 +114,6 @@
                                 <serializationLibrary>jackson</serializationLibrary>
                                 <serializableModel>false</serializableModel>
                                 <skipDefaultInterface>true</skipDefaultInterface>
-                                <sourceFolder>src/main/java/dmitrykh.local.springboot_randnumber</sourceFolder>
                                 <useBeanValidation>false</useBeanValidation>
                                 <useJakartaEe>true</useJakartaEe>
                                 <useSpringBoot3>true</useSpringBoot3>
