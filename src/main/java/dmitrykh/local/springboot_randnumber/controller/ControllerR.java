@@ -6,13 +6,17 @@ import org.springframework.web.bind.annotation.*;
 import dmitrykh.local.springboot_randnumber.model.RandNum;
 import dmitrykh.local.springboot_randnumber.model.RandLimit;
 
+import java.util.Random;
+
 @RestController
 @RequestMapping("/api")
 public class ControllerR {
     RandLimit randLimit = new RandLimit();
-
-    @Autowired
     RandNumGenerator randNumGenerator;
+
+    public ControllerR(RandNumGenerator randNumGenerator) {
+        this.randNumGenerator = randNumGenerator;
+    }
 
     @GetMapping("/getRandomNum")
     public RandNum getRandomNum() {
